@@ -7,7 +7,7 @@ export function activate(context: vscode.ExtensionContext) {
 		const editor = vscode.window.activeTextEditor;
 		if (!editor) return;
 
-		opn(getText(editor), { app: ['google chrome'] });
+		opn(getText(editor));
 	});
 
 	context.subscriptions.push(disposable);
