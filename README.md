@@ -1,4 +1,5 @@
 # search-in-browser README
+[![Build Status](https://dev.azure.com/hasefumi23/search-in-browser/_apis/build/status/hasefumi23.SearchInBrowser?branchName=master)](https://dev.azure.com/hasefumi23/search-in-browser/_build/latest?definitionId=1&branchName=master)
 
 This is the README for your extension "search-in-browser". After writing up a brief description, we recommend including the following sections.
 
