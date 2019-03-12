@@ -1,29 +1,4 @@
 jobs:
-- job: Linux
-
-  pool:
-    vmImage: 'Ubuntu 16.04'
-
-  strategy:
-    matrix:
-      node_11_x:
-        node_version: 11.x
-
-  steps:
-  - script: |
-      npm install
-    displayName: 'npm install'
-
-  - script: |
-      npm test --silent
-    displayName: 'run test'
-
-  - task: PublishTestResults@2
-    inputs:
-      testRunner: JUnit
-      testResultsFiles: ./test-results.xml
-      testRunTitle: 'test result'
-
 - job: Windows
 
   pool:
@@ -31,6 +6,8 @@ jobs:
 
   strategy:
     matrix:
+      node_10_x:
+        node_version: 10.x
       node_11_x:
         node_version: 11.x
 
