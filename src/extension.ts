@@ -3,7 +3,7 @@ import opn = require('opn');
 import validUrl = require('valid-url');
 
 export function activate(context: vscode.ExtensionContext) {
-	let disposable = vscode.commands.registerCommand('extension.helloWorld', () => {
+	let disposable = vscode.commands.registerCommand('extension.searchWithCursor', () => {
 		const editor = vscode.window.activeTextEditor;
 		if (!editor) return;
 
@@ -13,15 +13,18 @@ export function activate(context: vscode.ExtensionContext) {
 	context.subscriptions.push(disposable);
 }
 
-function getText(editor: vscode.TextEditor) {
+function pickUrl(text: string): string {
+	return validUrl.isWebUri(text) ? text : `https://www.google.com/search?q=${text.trim().replace(/\n+/g, ' ')}`;
+}
+
+function getText(editor: vscode.TextEditor): string {
 	const selection = editor.selection;
 	if (selection.isEmpty) {
 		const text = editor.document.lineAt(selection.start.line).text;
-		return text ? `https://www.google.com/search?q=${text}` : 'https://www.google.com';
+		return text ? pickUrl(text) : 'https://www.google.com';
 	}
 
-	const text = editor.document.getText(selection);
-	return validUrl.isWebUri(text) ? text : `https://www.google.com/search?q=${text.replace(/\n+/g, ' ')}`;
+	return pickUrl(editor.document.getText(selection));
 }
 
 export function deactivate() {}
