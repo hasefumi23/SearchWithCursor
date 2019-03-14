@@ -1,66 +1,38 @@
-# search-in-browser README
+# :arrow_upper_left: Search with cursor
+
 [![Build Status](https://dev.azure.com/hasefumi23/search-in-browser/_apis/build/status/hasefumi23.SearchInBrowser?branchName=master)](https://dev.azure.com/hasefumi23/search-in-browser/_build/latest?definitionId=1&branchName=master)
 
-This is the README for your extension "search-in-browser". After writing up a brief description, we recommend including the following sections.
+This extension can easily search with cursor.
 
-## Features
+## :wrench: Feature
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+This extension is very simple. The behavior is depends on the line on which cursor.
+There are three behaviors.
 
-For example if there is an image subfolder under your extension project workspace:
+- Search with selected text.
+- Search with text of the line on which cursor.
+- In the case the empty line, just open the browser([Google](<https://www.google.com/>)).
 
-\!\[feature X\]\(images/feature-x.png\)
+If text starts valid URL(starts with "http(s)://"), open website directly, otherwise `https://www.google.com/search?q=${text}`.
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+### Available command
 
-## Requirements
+Available Command is only **search with cursor**.
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+#### Shortcut
 
-## Extension Settings
+| Windows | Mac |
+|---|---|
+| Shift + alt + s | Shift + option + s (Mac) |
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+![feature](images/feature.gif)
 
-For example:
+## :memo: Release Notes
 
-This extension contributes the following settings:
+### 0.1.0
 
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
+Initial release.
 
-## Known Issues
+## License
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+[MIT](https://github.com/davidhouchin/whitespace-plus/blob/master/LICENSE)

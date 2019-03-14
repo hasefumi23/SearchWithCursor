@@ -1,8 +1,27 @@
 {
-	"name": "search-in-browser",
-	"displayName": "search-in-browser",
-	"description": "",
-	"version": "0.0.1",
+	"name": "search-with-cursor",
+	"displayName": "Search with cursor",
+	"description": "Search with cursor in browser.",
+	"readme": "README.md",
+	"version": "0.1.0",
+	"publisher": "hasefumi23",
+	"galleryBanner": {
+		"color": "#e3f4ff",
+		"theme": "light"
+	},
+	"license": "MIT",
+	"keywords": [
+		"search",
+		"cursor",
+		"browser"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/hasefumi23/SearchWithCursor.git"
+	},
+	"bugs": {
+		"url": "https://github.com/hasefumi23/SearchWithCursor/issues"
+	},
 	"engines": {
 		"vscode": "^1.32.0"
 	},
@@ -10,20 +29,20 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:extension.helloWorld"
+		"onCommand:extension.searchWithCursor"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "extension.helloWorld",
-				"title": "Hello World"
+				"command": "extension.searchWithCursor",
+				"title": "Search with cursor"
 			}
 		],
 		"keybindings": [
 			{
 				"key": "alt+shift+s",
-				"command": "extension.helloWorld",
+				"command": "extension.searchWithCursor",
 				"when": "editorTextFocus"
 			}
 		]
