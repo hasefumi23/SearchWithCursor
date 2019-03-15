@@ -1,6 +1,8 @@
 # :arrow_upper_left: Search with cursor
 
+[![http://aka.ms/vscodevim](https://vsmarketplacebadge.apphb.com/version/hasefumi23.search-with-cursor.svg)](http://aka.ms/vscodevim)
 [![Build Status](https://dev.azure.com/hasefumi23/search-in-browser/_apis/build/status/hasefumi23.SearchInBrowser?branchName=master)](https://dev.azure.com/hasefumi23/search-in-browser/_build/latest?definitionId=1&branchName=master)
+[![The MIT License](https://img.shields.io/badge/license-MIT-orange.svg?style=flat-square)](http://opensource.org/licenses/MIT)
 
 This extension can easily search with cursor.
 
@@ -13,7 +15,7 @@ There are three behaviors.
 - Search with text of the line on which cursor.
 - In the case the empty line, just open the browser([Google](<https://www.google.com/>)).
 
-If text starts valid URL(starts with "http(s)://"), open website directly, otherwise `https://www.google.com/search?q=${text}`.
+If text has valid URL, open website directly, otherwise `https://www.google.com/search?q=${text}`.
 
 ### Available command
 
@@ -23,11 +25,15 @@ Available Command is only **search with cursor**.
 
 | Windows | Mac |
 |---|---|
-| Shift + alt + s | Shift + option + s (Mac) |
+| Shift + alt + s | Shift + option + s |
 
 ![feature](images/feature.gif)
 
 ## :memo: Release Notes
+
+### 0.1.1
+
+Change the condition of direct access from exact match to including.
 
 ### 0.1.0
 
