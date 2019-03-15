@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
 import opn = require('opn');
-import validUrl = require('valid-url');
+import urlRegex = require('url-regex');
 
 export function activate(context: vscode.ExtensionContext) {
 	let disposable = vscode.commands.registerCommand('extension.searchWithCursor', () => {
@@ -14,17 +14,21 @@ export function activate(context: vscode.ExtensionContext) {
 }
 
 function pickUrl(text: string): string {
-	return validUrl.isWebUri(text) ? text : `https://www.google.com/search?q=${text.trim().replace(/\n+/g, ' ')}`;
+	if (urlRegex().test(text)) {
+		const url = text.match(urlRegex())!.shift();
+		if (url) return url;
+	}
+
+	return `https://www.google.com/search?q=${text.trim().replace(/\n+/g, ' ')}`;
 }
 
 function getText(editor: vscode.TextEditor): string {
 	const selection = editor.selection;
-	if (selection.isEmpty) {
-		const text = editor.document.lineAt(selection.start.line).text;
-		return text ? pickUrl(text) : 'https://www.google.com';
-	}
+	const text = selection.isEmpty
+		? editor.document.lineAt(selection.start.line).text.trim()
+		: editor.document.getText(selection).trim();
 
-	return pickUrl(editor.document.getText(selection));
+	return text ? pickUrl(text) : 'https://www.google.com';
 }
 
 export function deactivate() {}

@@ -64,7 +64,8 @@
 	},
 	"dependencies": {
 		"@types/opn": "^5.1.0",
+		"@types/url-regex": "^4.1.0",
 		"opn": "^5.4.0",
-		"valid-url": "^1.0.9"
+		"url-regex": "^4.1.1"
 	}
 }
