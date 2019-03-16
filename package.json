@@ -3,7 +3,7 @@
 	"displayName": "Search with cursor",
 	"description": "Search with cursor in browser.",
 	"readme": "README.md",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"publisher": "hasefumi23",
 	"galleryBanner": {
 		"color": "#e3f4ff",
@@ -64,8 +64,6 @@
 	},
 	"dependencies": {
 		"@types/opn": "^5.1.0",
-		"@types/url-regex": "^4.1.0",
-		"opn": "^5.4.0",
-		"url-regex": "^4.1.1"
+		"opn": "^5.4.0"
 	}
 }

@@ -31,6 +31,13 @@ Available Command is only **search with cursor**.
 
 ## :memo: Release Notes
 
+### 0.1.2
+
+Enhance matching logic for url.
+
+- Use raw RegExp instead of url-regex(it matches `localhost:8080` and url in markdown syntax).
+- Use encodeURIComponent.
+
 ### 0.1.1
 
 Change the condition of direct access from exact match to including.

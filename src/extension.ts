@@ -1,6 +1,8 @@
 import * as vscode from 'vscode';
 import opn = require('opn');
-import urlRegex = require('url-regex');
+
+// cf. https://daringfireball.net/2010/07/improved_regex_for_matching_urls
+const URL_REGEX: RegExp = /(?:https?:\/\/|localhost|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}\/)(?:[^\s()<>\[\]]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>\[\]]+|(\([^\s()<>\[\]]+\)))*\)|[^\s`!(){}\[\];:'".,<>?«»“”‘’])/ig
 
 export function activate(context: vscode.ExtensionContext) {
 	let disposable = vscode.commands.registerCommand('extension.searchWithCursor', () => {
@@ -14,12 +16,13 @@ export function activate(context: vscode.ExtensionContext) {
 }
 
 function pickUrl(text: string): string {
-	if (urlRegex().test(text)) {
-		const url = text.match(urlRegex())!.shift();
+	if (URL_REGEX.test(text)) {
+		const url = text.match(URL_REGEX)!.shift();
 		if (url) return url;
 	}
 
-	return `https://www.google.com/search?q=${text.trim().replace(/\n+/g, ' ')}`;
+	const encodedText = encodeURIComponent(text.trim().replace(/\n+/g, ' '));
+	return `https://www.google.com/search?q=${encodedText}`;
 }
 
 function getText(editor: vscode.TextEditor): string {
