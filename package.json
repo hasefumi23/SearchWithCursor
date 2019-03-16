@@ -3,7 +3,7 @@
 	"displayName": "Search with cursor",
 	"description": "Search with cursor in browser.",
 	"readme": "README.md",
-	"version": "0.1.2",
+	"version": "0.1.3",
 	"publisher": "hasefumi23",
 	"galleryBanner": {
 		"color": "#e3f4ff",

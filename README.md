@@ -1,6 +1,6 @@
 # :arrow_upper_left: Search with cursor
 
-[![http://aka.ms/vscodevim](https://vsmarketplacebadge.apphb.com/version/hasefumi23.search-with-cursor.svg)](http://aka.ms/vscodevim)
+[![https://marketplace.visualstudio.com/items?itemName=hasefumi23.search-with-cursor](https://vsmarketplacebadge.apphb.com/version/hasefumi23.search-with-cursor.svg)](https://marketplace.visualstudio.com/items?itemName=hasefumi23.search-with-cursor)
 [![Build Status](https://dev.azure.com/hasefumi23/search-in-browser/_apis/build/status/hasefumi23.SearchInBrowser?branchName=master)](https://dev.azure.com/hasefumi23/search-in-browser/_build/latest?definitionId=1&branchName=master)
 [![The MIT License](https://img.shields.io/badge/license-MIT-orange.svg?style=flat-square)](http://opensource.org/licenses/MIT)
 
