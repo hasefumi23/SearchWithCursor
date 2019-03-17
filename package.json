@@ -3,7 +3,7 @@
 	"displayName": "Search with cursor",
 	"description": "Search with cursor in browser.",
 	"readme": "README.md",
-	"version": "0.1.4",
+	"version": "0.1.5",
 	"publisher": "hasefumi23",
 	"galleryBanner": {
 		"color": "#e3f4ff",
@@ -46,6 +46,17 @@
 				"when": "editorTextFocus"
 			}
 		]
+	},
+	"configuration": {
+		"title": "Search with cursor Configuration",
+		"type": "object",
+		"properties": {
+			"searchWithCursor.customSearchEngine": {
+				"type": "string",
+				"default": "https://www.google.com/search?q=%s",
+				"description": "Search engine."
+			}
+		}
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
