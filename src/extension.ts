@@ -5,11 +5,19 @@ import opn = require('opn');
 const URL_REGEX: RegExp = /(?:https?:\/\/|localhost|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}\/)(?:[^\s()<>\[\]]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>\[\]]+|(\([^\s()<>\[\]]+\)))*\)|[^\s`!(){}\[\];:'".,<>?«»“”‘’])/ig
 
 export function activate(context: vscode.ExtensionContext) {
-	let disposable = vscode.commands.registerCommand('extension.searchWithCursor', () => {
+	let disposable = vscode.commands.registerCommand('extension.searchWithCursor', async () => {
+		await vscode.commands.executeCommand('editor.action.openLink');
+
 		const editor = vscode.window.activeTextEditor;
 		if (!editor) return;
 
-		opn(getText(editor));
+		// Workaround: Can't detect whether `editor.action.openLink` could open URL and showed up browser or not.
+		// Waiting for new API will be provided.
+		setTimeout(() => {
+			if (vscode.window.state.focused) {
+				opn(getText(editor));
+			}
+		}, 300);
 	});
 
 	context.subscriptions.push(disposable);
