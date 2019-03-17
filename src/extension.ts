@@ -22,7 +22,8 @@ function pickUrl(text: string): string {
 	}
 
 	const encodedText = encodeURIComponent(text.trim().replace(/\n+/g, ' '));
-	return `https://www.google.com/search?q=${encodedText}`;
+	const searchEngine = vscode.workspace.getConfiguration('searchWithCursor').get('customSearchEngine', 'https://www.google.com/search?q=%s');
+	return searchEngine.replace(/%s/g, encodedText);
 }
 
 function getText(editor: vscode.TextEditor): string {

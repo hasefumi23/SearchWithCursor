@@ -29,7 +29,22 @@ Available Command is only **search with cursor**.
 
 ![feature](images/feature.gif)
 
+### Search with cursor settings
+
+These settings are specific to search-with-cursor.
+
+| Setting | Description | Type | Default Value |
+| --- | --- | --- |  --- |
+| searchWithCursor.customSearchEngine | Search engine. | string | https://www.google.com/search?q=%s |
+
 ## :memo: Release Notes
+
+### 0.1.4
+
+Add configuration searchWithCursor.customSearchEngine.
+It replace search engine.
+Default value: https://www.google.com/search?q=%s
+`%s` will be replaced selected text.
 
 ### 0.1.2
 
